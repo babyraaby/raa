@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cerita Saya Sendiri</title>
+  <style>
+    body {
+      font-family: "Segoe UI", sans-serif;
+      background: linear-gradient(135deg, #fddb92, #d1fdff);
+      margin: 0;
+      padding: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      min-height: 100vh;
+    }
+    .zahra1 {
+      width: 100%;
+      max-width: 650px;
+      background: #fff;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+    h1 {
+      text-align: center;
+      color: #2a2a2a;
+      margin-bottom: 15px;
+    }
+    textarea {
+      width: 100%;
+      min-height: 150px;
+      padding: 10px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      margin-bottom: 15px;
+      font-size: 15px;
+      resize: vertical;
+    }
+    .zahra2 {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      display: inline-block;
+      margin: 5px;
+    }
+    .zahra3 {
+      background: #ff7e5f;
+      color: white;
+    }
+    .zahra3:hover {
+      background: #eb4d34;
+    }
+    .zahra4 {
+      background: #ccc;
+      color: #222;
+    }
+    .zahra4:hover {
+      background: #999;
+    }
+    .zahra5 {
+      display: inline-block;
+      padding: 10px 20px;
+      border-radius: 8px;
+      background: #43e97b;
+      color: white;
+      font-size: 16px;
+      text-decoration: none;
+      transition: background 0.3s;
+      margin-top: 10px;
+    }
+    .zahra5:hover {
+      background: #38c172;
+    }
+    .zahra6 {
+      margin-top: 20px;
+      padding: 15px;
+      border-radius: 10px;
+      background: #f1f1f1;
+      display: none;
+      animation: fadeIn 0.6s ease-in-out;
+      white-space: pre-line;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <div class="zahra1">
+    <h1>Tulis Cerita Kamu Sendiri</h1>
+    <textarea id="cerita" placeholder="Tuliskan cerita kamu di sini..."></textarea>
+    <div style="text-align: center;">
+      <button id="btnTampil" class="zahra2 zahra3">Tampilkan Cerita</button>
+      <button id="btnReset" class="zahra2 zahra4">Reset</button>
+      <a href="project js.html" class="zahra5">Balik ke Halaman Utama</a>
+    </div>
+
+    <div id="hasil" class="zahra6"></div>
+  </div>
+
+<script>
+document.getElementById("btnTampil").addEventListener("click", function() {
+  const isi = document.getElementById("cerita").value;
+  const hasil = document.getElementById("hasil");
+
+  if (isi.trim() === "") {
+    alert("Cerita tidak boleh kosong!");
+    return;
+  }
+
+  hasil.style.display = "block";
+  hasil.innerHTML = "<h2>Cerita Kamu</h2>";
+  const p = document.createElement("p");
+  p.textContent = isi;
+  hasil.appendChild(p);
+});
+
+document.getElementById("btnReset").addEventListener("click", function() {
+  document.getElementById("cerita").value = "";
+  document.getElementById("hasil").style.display = "none";
+  document.getElementById("hasil").innerHTML = "";
+});
+</script>
+</body>
+</html>

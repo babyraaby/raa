@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>080925</title>
+  <style>
+    body {
+      font-family: "Segoe UI", sans-serif;
+      background: linear-gradient(135deg, #a1c4fd, #c2e9fb);
+      margin: 0;
+      padding: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      min-height: 100vh;
+    }
+
+    .zahra1 {
+      width: 100%;
+      max-width: 650px;
+    }
+
+    .zahra2, .zahra3 {
+      background: #fff;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      margin-bottom: 15px;
+      text-align: center;
+    }
+
+    h1 {
+      text-align: center;
+      color: #2a2a2a;
+      margin-bottom: 15px;
+    }
+
+    p {
+      line-height: 1.7;
+      color: #444;
+      margin: 10px 0;
+      text-align: justify;
+    }
+
+    strong {
+      color: #2a7bff;
+    }
+
+    .zahra4 {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 8px;
+      background: #4facfe;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background 0.3s;
+      display: block;
+      margin: 10px auto;
+    }
+
+    .zahra4:hover {
+      background: #2a7bff;
+    }
+
+    /* 🔹 Tombol link */
+    .zahra5 {
+      display: inline-block;
+      padding: 10px 20px;
+      border-radius: 8px;
+      background: #43e97b;
+      color: white;
+      font-size: 16px;
+      text-decoration: none;
+      transition: background 0.3s;
+      margin-top: 10px;
+    }
+
+    .zahra5:hover {
+      background: #38c172;
+    }
+
+    .zahra3 {
+      display: none;
+      animation: fadeIn 0.6s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <div class="zahra1">
+    <form id="formsaya" class="zahra2">
+      <input type="submit" value="Tampilkan Cerita" class="zahra4">
+      <a href="project js 2.html" class="zahra5">Tulis Cerita Saya Sendiri</a>
+    </form>
+
+    <div id="gatau" class="zahra3"></div>
+
+    <!-- Tarik file JS eksternal -->
+    <script src="project zahra.js"></script>
+  </div>
+<script>
+  
+// 🔹 Prompt untuk isi cerita
+var zaza = prompt("Siapa nama kamu?", "Zahra");
+var zizi = prompt("Suara apa yang pertama kali kamu dengar hari ini?", "Burung bernyanyi");
+let zuzu = prompt("Hari apa sekarang?", "Kamis");
+let zeze = prompt("Kamu sedang berada di mana?", "Sekolah");
+var zozo = prompt("Makanan ringan favoritmu apa?", "Roti coklat");
+let ziza = prompt("Aktivitas apa yang bikin kamu semangat?", "Jogging sore");
+
+// 🔹 Tampilkan cerita setelah klik submit
+const form = document.getElementById("formsaya"); 
+const hasil = document.getElementById("gatau"); 
+
+form.addEventListener("submit", function(e) {
+    e.preventDefault();
+    
+    hasil.style.display = "block"; 
+    hasil.innerHTML = `
+        <h1>Cerita Harian</h1>
+        <p><strong>Pagi:</strong> ${zaza} terbangun ketika mendengar ${zizi}. Hari ${zuzu} terasa cerah, dan suasana di ${zeze} memberi semangat baru.</p>
+        <p><strong>Siang:</strong> Waktu istirahat diisi dengan menikmati ${zozo}. Rasanya sederhana, tapi cukup membuat tenaga kembali.</p>
+        <p><strong>Sore:</strong> Untuk menutup harinya, ${zaza} memilih ${ziza}, membuat tubuh segar dan hati lebih tenang.</p>
+    `;
+});
+    
+</script>
+</body>
+</html>
